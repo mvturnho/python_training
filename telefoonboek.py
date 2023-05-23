@@ -1,4 +1,5 @@
-import json
+import json # om de json bibliotheek te gebruiken moet je deze eerst importeren.
+
 #we lezen een json bestand in voor ons telefoonboek
 #eerst openen we het bestand telefoonboek.json om in te lezen 'r' in variable file
 with open('telefoonboek.json','r') as file:
