@@ -15,6 +15,7 @@ max_turns = len(DATA.pics)
 turn = 1
 
 guessed_letters = []
+faulty_letters = []
 
 complete = False
 
@@ -32,7 +33,11 @@ while ((turn < max_turns + 1) and not complete ):
         guessed_letters.append(letter)
     else:
         print(DATA.pics[turn - 1])
+        faulty_letters.append(letter)
         turn = turn + 1
+
+    # neem actie op letters die al geraden zijn en die goed of fout waren
+    # gebruik daarbij de guessed_letters array en faulty_letters array
 
     print("  ", end='')
     complete = True
@@ -42,6 +47,10 @@ while ((turn < max_turns + 1) and not complete ):
         else:
             complete = False
             print(".", end='')
+
+    print("    fout geraden letters: ", end='')
+    for faulty_letter in faulty_letters:
+        print(faulty_letter,end='')
     print("\n")
 
 if(complete):
